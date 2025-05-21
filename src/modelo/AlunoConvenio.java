@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
 import java.time.LocalDate;
 import java.time.Period;
 
-/**
- *
- * @author vanessalagomachado
- */
 public class AlunoConvenio extends Aluno{
     private Convenio convenio;
 
@@ -64,9 +56,12 @@ public class AlunoConvenio extends Aluno{
      @Override
     public String exibirDados(){
         String aux = super.exibirDados();
+        if(convenio!=null){
         aux += "\nConvênio: " + convenio.getNome()
                 + "\nDescrição: " + convenio.getDescricao()
-                + "\n" + convenio.getDesconto();
+                + "\nDesconto: " + convenio.getDesconto()
+                + "%\n";
+        }
         return aux;
     }
         
